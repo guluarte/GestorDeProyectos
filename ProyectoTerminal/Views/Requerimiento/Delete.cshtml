@@ -1,0 +1,56 @@
+﻿@model ProyectoTerminal.Models.Requerimiento
+
+@{
+    ViewBag.Title = "Borrar requerimiento";
+}
+
+<h2>Borrar requerimiento</h2>
+
+<h3>Seguro que deseas borrar este requerimiento?</h3>
+<div>
+    <h4>Requerimiento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar a la lista", "Index", new { pId = Model.ProyectoId }, new { @class = "btn btn-info" })
+        </div>
+    }
+</div>

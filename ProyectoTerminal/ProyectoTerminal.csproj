@@ -164,6 +164,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NotaController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
+    <Compile Include="Controllers\RequerimientoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -267,6 +268,11 @@
     <Content Include="Views\Nota\Edit.cshtml" />
     <Content Include="Views\Nota\Index.cshtml" />
     <Content Include="Views\Nota\Create.cshtml" />
+    <Content Include="Views\Requerimiento\Create.cshtml" />
+    <Content Include="Views\Requerimiento\Delete.cshtml" />
+    <Content Include="Views\Requerimiento\Details.cshtml" />
+    <Content Include="Views\Requerimiento\Edit.cshtml" />
+    <Content Include="Views\Requerimiento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

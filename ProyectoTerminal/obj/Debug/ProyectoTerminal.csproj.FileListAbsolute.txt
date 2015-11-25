@@ -52,3 +52,4 @@ c:\Users\rguluarte\Documents\Visual Studio 2013\Projects\ProyectoTerminal\Proyec
 c:\Users\rguluarte\Documents\Visual Studio 2013\Projects\ProyectoTerminal\ProyectoTerminal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\Users\rguluarte\Documents\Visual Studio 2013\Projects\ProyectoTerminal\ProyectoTerminal\obj\Debug\ProyectoTerminal.dll
 c:\Users\rguluarte\Documents\Visual Studio 2013\Projects\ProyectoTerminal\ProyectoTerminal\obj\Debug\ProyectoTerminal.pdb
+c:\Users\rguluarte\Documents\Visual Studio 2013\Projects\ProyectoTerminal\ProyectoTerminal\obj\Debug\ProyectoTerminal.csprojResolveAssemblyReference.cache
