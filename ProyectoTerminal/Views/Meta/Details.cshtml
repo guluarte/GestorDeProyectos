@@ -1,0 +1,50 @@
+﻿@model ProyectoTerminal.Models.Meta
+
+@{
+    ViewBag.Title = "Detalles de la meta";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>Meta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCompletacionPlaneada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCompletacionPlaneada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCompletacionActual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCompletacionActual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Completada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Completada)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Regresar a la lista", "Index", new { pId = Model.ProyectoId }, new { @class = "btn btn-info" })
+</p>

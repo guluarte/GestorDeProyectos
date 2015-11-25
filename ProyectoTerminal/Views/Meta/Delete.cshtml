@@ -1,0 +1,56 @@
+﻿@model ProyectoTerminal.Models.Meta
+
+@{
+    ViewBag.Title = "Borrar Meta";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Estas seguro que deseas borrar la meta?</h3>
+<div>
+    <h4>Meta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCompletacionPlaneada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCompletacionPlaneada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCompletacionActual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCompletacionActual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Completada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Completada)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar a la lista", "Index", new { pId = Model.ProyectoId }, new { @class = "btn btn-info" })
+        </div>
+    }
+</div>

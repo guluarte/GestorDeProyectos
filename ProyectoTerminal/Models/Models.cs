@@ -44,13 +44,11 @@ namespace ProyectoTerminal.Models
         [Required]
         public Guid ProyectoId { get; set; }
         [Required]
+        [Display(Name = "Titulo")]
+        public string Titulo { get; set; }
+        [Required]
         [Display(Name = "Texto")]
         public string Texto { get; set; }
-        [Required]
-        [Display(Name = "Fecha de creacion")]
-        public DateTime FechaCreacion { get; set; }
-        [Display(Name = "Fecha de modificacion")]
-        public DateTime? FechaModificacion { get; set; }
 
     }
 
@@ -95,6 +93,8 @@ namespace ProyectoTerminal.Models
         public string Nombre { get; set; }
         [Display(Name = "Fecha de completacion Actual")]
         public DateTime? FechaCompletacionActual { get; set; }
+
+        public bool Completada { get; set; }
         [Required]
         public Guid ProyectoId { get; set; }
     }
@@ -114,11 +114,6 @@ namespace ProyectoTerminal.Models
         public Guid ProyectoId { get; set; }
         [Display(Name = "Tarea Activa")]
         public bool Activa { get; set; }
-        [Required]
-        [Display(Name = "Fecha de creacion")]
-        public DateTime Fecha { get; set; }
-        [Display(Name = "Fecha de completacion")]
-        public DateTime? FechaCompleatacion { get; set; }
     }
 
     public class Repositorio
