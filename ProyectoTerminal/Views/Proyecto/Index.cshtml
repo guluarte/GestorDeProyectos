@@ -7,7 +7,7 @@
 <h2>Listado de proyectos</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo proyecto", "Create")
+    @Html.ActionLink("Crear nuevo proyecto", "Create", null, new { @class = "btn btn-success" })
 </p>
 <table class="table">
     <tr>
@@ -26,7 +26,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Requerimientos)
         </th>
-        <th>
+        <th class="center-block">
             @Html.DisplayNameFor(model => model.Documentos)
         </th>
         <th>
@@ -41,7 +41,6 @@
         <th>
             Acciones
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -56,37 +55,38 @@
             @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
-            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+            <!-- notas -->
+            @Html.ActionLink(" ", "Index", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-zoom-in" }) |
+            @Html.ActionLink(" ", "Create", "Nota", new {pid = item.Id}, new { @class = "glyphicon glyphicon-plus" })
         </td>
         <td> <!-- requerimientos -->
-            @Html.ActionLink("Lista", "Index", "Nota", new { pid = item.Id }, null)
-            @Html.ActionLink("Nueva", "Create", "Nota", new { pid = item.Id }, null)
+            @Html.ActionLink(" ", "Index", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-zoom-in" })
+            @Html.ActionLink(" ", "Create", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-plus" })
         </td>
-        <td>
+        <td class="center-block">
             <!-- documentos -->
-            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
-            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+            @Html.ActionLink(" ", "Index", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-zoom-in" })
+            @Html.ActionLink(" ", "Create", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-plus" })
         </td>
         <td>
             <!-- metas -->
-            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
-            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+            @Html.ActionLink(" ", "Index", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-zoom-in" })
+            @Html.ActionLink(" ", "Create", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-plus" })
         </td>
         <td>
             <!-- tareas -->
-            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
-            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+            @Html.ActionLink(" ", "Index", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-zoom-in" })
+            @Html.ActionLink(" ", "Create", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-plus" })
         </td>
         <td>
             <!-- repositorios -->
-            @Html.ActionLink("Lista", "Index", "Nota", new { pid = item.Id }, null)
-            @Html.ActionLink("Nueva", "Create", "Nota", new { pid = item.Id }, null)
+            @Html.ActionLink(" ", "Index", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-zoom-in" }) |
+            @Html.ActionLink(" ", "Create", "Nota", new { pid = item.Id }, new { @class = "glyphicon glyphicon-plus" })
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Borrar", "Delete", new { id=item.Id })
+            @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "glyphicon glyphicon-pencil" }) |
+            @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "glyphicon glyphicon-zoom-in" }) |
+            @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "glyphicon glyphicon-remove" })
         </td>
     </tr>
 }
