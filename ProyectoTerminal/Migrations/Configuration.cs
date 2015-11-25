@@ -9,8 +9,7 @@ namespace ProyectoTerminal.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "ProyectoTerminal.Models.ProyectoTerminalContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(ProyectoTerminal.Models.ProyectoTerminalContext context)

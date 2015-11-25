@@ -27,8 +27,6 @@ namespace ProyectoTerminal.Models
 
         public System.Data.Entity.DbSet<ProyectoTerminal.Models.Proyecto> Proyectoes { get; set; }
 
-        public System.Data.Entity.DbSet<ProyectoTerminal.Models.Usuario> Usuarios { get; set; }
-
         public System.Data.Entity.DbSet<ProyectoTerminal.Models.Meta> Metas { get; set; }
 
         public System.Data.Entity.DbSet<ProyectoTerminal.Models.Tarea> Tareas { get; set; }

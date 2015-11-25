@@ -1,10 +1,10 @@
 ﻿@model ProyectoTerminal.Models.Nota
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles de la nota";
 }
 
-<h2>Details</h2>
+<h2>Detalles de la nota</h2>
 
 <div>
     <h4>Nota</h4>
@@ -30,5 +30,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar a la lista", "Index", new { pId = Model.ProyectoId })
 </p>

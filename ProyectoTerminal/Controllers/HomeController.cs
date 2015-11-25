@@ -10,7 +10,7 @@ namespace ProyectoTerminal.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Proyecto");
         }
 
         public ActionResult About()

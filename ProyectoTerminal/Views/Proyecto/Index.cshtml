@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ProyectoTerminal.Models.Proyecto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado de Proyectos";
 }
 
-<h2>Index</h2>
+<h2>Listado de proyectos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nuevo proyecto", "Create")
 </p>
 <table class="table">
     <tr>
@@ -15,13 +15,31 @@
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fecha)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Activo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Requerimientos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Documentos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Metas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tareas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Repositorios)
+        </th>
+        <th>
+            Acciones
         </th>
         <th></th>
     </tr>
@@ -32,18 +50,43 @@
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Fecha)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Activo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
+            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+        </td>
+        <td> <!-- requerimientos -->
+            @Html.ActionLink("Lista", "Index", "Nota", new { pid = item.Id }, null)
+            @Html.ActionLink("Nueva", "Create", "Nota", new { pid = item.Id }, null)
+        </td>
+        <td>
+            <!-- documentos -->
+            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
+            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+        </td>
+        <td>
+            <!-- metas -->
+            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
+            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+        </td>
+        <td>
+            <!-- tareas -->
+            @Html.ActionLink("Lista", "Index", "Nota", new {pid = item.Id}, null)
+            @Html.ActionLink("Nueva", "Create", "Nota", new {pid = item.Id}, null)
+        </td>
+        <td>
+            <!-- repositorios -->
+            @Html.ActionLink("Lista", "Index", "Nota", new { pid = item.Id }, null)
+            @Html.ActionLink("Nueva", "Create", "Nota", new { pid = item.Id }, null)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

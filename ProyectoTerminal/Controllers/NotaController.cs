@@ -15,9 +15,11 @@ namespace ProyectoTerminal.Controllers
         private ProyectoTerminalContext db = new ProyectoTerminalContext();
 
         // GET: /Nota/
-        public ActionResult Index()
+        public ActionResult Index(Guid pId)
         {
-            return View(db.Notas.ToList());
+            var notas = db.Notas.Where(n => n.ProyectoId == pId);
+
+            return View(notas.ToList());
         }
 
         // GET: /Nota/Details/5
@@ -36,9 +38,13 @@ namespace ProyectoTerminal.Controllers
         }
 
         // GET: /Nota/Create
-        public ActionResult Create()
+        public ActionResult Create(Guid pId)
         {
-            return View();
+            var nota = new Nota
+            {
+                ProyectoId = pId
+            };
+            return View(nota);
         }
 
         // POST: /Nota/Create
@@ -46,14 +52,15 @@ namespace ProyectoTerminal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Texto,Fecha")] Nota nota)
+        public ActionResult Create([Bind(Include = "Id,Texto,Fecha,ProyectoId")] Nota nota)
         {
             if (ModelState.IsValid)
             {
                 nota.Id = Guid.NewGuid();
+                nota.Fecha = DateTime.Now;
                 db.Notas.Add(nota);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { pId = nota.ProyectoId });
             }
 
             return View(nota);
@@ -79,13 +86,13 @@ namespace ProyectoTerminal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Texto,Fecha")] Nota nota)
+        public ActionResult Edit([Bind(Include = "Id,Texto,Fecha,ProyectoId")] Nota nota)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(nota).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { pId = nota.ProyectoId });
             }
             return View(nota);
         }
@@ -113,7 +120,7 @@ namespace ProyectoTerminal.Controllers
             Nota nota = db.Notas.Find(id);
             db.Notas.Remove(nota);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { pId = nota.ProyectoId });
         }
 
         protected override void Dispose(bool disposing)

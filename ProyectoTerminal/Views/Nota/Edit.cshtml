@@ -1,10 +1,10 @@
 ﻿@model ProyectoTerminal.Models.Nota
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Nota";
 }
 
-<h2>Edit</h2>
+<h2>Editar la Nota</h2>
 
 
 @using (Html.BeginForm())
@@ -16,6 +16,7 @@
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(t => t.ProyectoId)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Texto, new { @class = "control-label col-md-2" })
@@ -42,7 +43,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+   @Html.ActionLink("Regresar a la lista", "Index", new { pId = Model.ProyectoId })
 </div>
 
 @section Scripts {
