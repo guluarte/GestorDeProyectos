@@ -53,7 +53,7 @@ namespace ProyectoTerminal.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", "Usuario o contrasena no validos.");
                 }
             }
 

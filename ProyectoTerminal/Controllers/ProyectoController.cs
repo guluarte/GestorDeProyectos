@@ -7,6 +7,7 @@ using ProyectoTerminal.Models;
 
 namespace ProyectoTerminal.Controllers
 {
+    [Authorize]
     public class ProyectoController : Controller
     {
         private ProyectoTerminalContext db = new ProyectoTerminalContext();
