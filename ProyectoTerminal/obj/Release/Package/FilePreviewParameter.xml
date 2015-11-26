@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="GestorDeProyectos" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^c:\\Users\\rguluarte\\Documents\\Visual\ Studio\ 2013\\Projects\\ProyectoTerminal\\ProyectoTerminal\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^c:\\Users\\rguluarte\\Documents\\Visual\ Studio\ 2013\\Projects\\ProyectoTerminal\\ProyectoTerminal\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-ProyectoTerminal-201511250817489.mdf;Initial Catalog=aspnet-ProyectoTerminal-201511250817489;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="c:\\Users\\rguluarte\\Documents\\Visual\ Studio\ 2013\\Projects\\ProyectoTerminal\\ProyectoTerminal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ProyectoTerminalContext-Web.config Connection String" description="" value="Data Source=(localdb)\v11.0; Initial Catalog=ProyectoTerminalContext-201511250955579; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|ProyectoTerminalContext-201511250955579.mdf" tags="">
+    <parameterEntry kind="XmlFile" scope="c:\\Users\\rguluarte\\Documents\\Visual\ Studio\ 2013\\Projects\\ProyectoTerminal\\ProyectoTerminal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProyectoTerminalContext']/@connectionString" />
+  </parameter>
+</parameters>

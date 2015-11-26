@@ -1,0 +1,44 @@
+﻿@model ProyectoTerminal.Models.Documento
+
+@{
+    ViewBag.Title = "Borrar documento";
+}
+
+<h2>Borrar documento</h2>
+
+<h3>Estas seguro que deseas borrar este documento?</h3>
+<div>
+    <h4>Documento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectoId)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar a la lista", "Index", new { pId = Model.ProyectoId }, new { @class = "btn btn-info" })
+        </div>
+    }
+</div>
