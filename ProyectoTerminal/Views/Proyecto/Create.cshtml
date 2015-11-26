@@ -26,25 +26,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Fecha, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Fecha)
-                    @Html.ValidationMessageFor(model => model.Fecha)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Activo, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Activo)
-                    @Html.ValidationMessageFor(model => model.Activo)
-                </div>
-            </div>
-
-            <div class="form-group">
                 @Html.LabelFor(model => model.Descripcion, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Descripcion)
+                    @Html.TextAreaFor(model => model.Descripcion)
                     @Html.ValidationMessageFor(model => model.Descripcion)
                 </div>
             </div>
@@ -59,7 +43,7 @@
 }
 
 <div>
-    @Html.ActionLink("Regresar a ala lista", "Index", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("Regresar a la lista", "Index", null, new { @class = "btn btn-info" })
 </div>
 
 @section Scripts {

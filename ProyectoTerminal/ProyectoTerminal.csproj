@@ -166,8 +166,10 @@
     <Compile Include="Controllers\MetaController.cs" />
     <Compile Include="Controllers\NotaController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
+    <Compile Include="Controllers\RepositoriosController.cs" />
     <Compile Include="Controllers\RequerimientoController.cs" />
     <Compile Include="Controllers\TareasController.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,6 +293,11 @@
     <Content Include="Views\Tareas\Details.cshtml" />
     <Content Include="Views\Tareas\Edit.cshtml" />
     <Content Include="Views\Tareas\Index.cshtml" />
+    <Content Include="Views\Repositorios\Create.cshtml" />
+    <Content Include="Views\Repositorios\Delete.cshtml" />
+    <Content Include="Views\Repositorios\Details.cshtml" />
+    <Content Include="Views\Repositorios\Edit.cshtml" />
+    <Content Include="Views\Repositorios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

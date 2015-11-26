@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ProyectoTerminal.Models.Tarea>
+﻿@using ProyectoTerminal.Extensions
+@model IEnumerable<ProyectoTerminal.Models.Tarea>
 
 @{
     ViewBag.Title = "Listado de tareas";
@@ -24,10 +25,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
+                @Html.DisplayFor(modelItem => item.Nombre).ToString().TruncateString(0, 50)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
+                @Html.DisplayFor(modelItem => item.Descripcion).ToString().TruncateString(0, 100)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Activa)

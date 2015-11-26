@@ -1,118 +1,124 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using ProyectoTerminal.Models;
 
 namespace ProyectoTerminal.Controllers
 {
-    public class ProyectoController : Controller
+    public class RepositoriosController : Controller
     {
         private ProyectoTerminalContext db = new ProyectoTerminalContext();
 
-        // GET: /Proyecto/
-        public ActionResult Index()
+        // GET: /Repositorios/
+        public ActionResult Index(Guid pId)
         {
-            return View(db.Proyectoes.ToList());
+            var repos = db.Repositorios.Where(n => n.ProyectoId == pId);
+            return View(repos.ToList());
         }
 
-        // GET: /Proyecto/Details/5
+        // GET: /Repositorios/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Proyecto proyecto = db.Proyectoes.Find(id);
-            if (proyecto == null)
+            Repositorio repositorio = db.Repositorios.Find(id);
+            if (repositorio == null)
             {
                 return HttpNotFound();
             }
-            return View(proyecto);
+            return View(repositorio);
         }
 
-        // GET: /Proyecto/Create
-        public ActionResult Create()
+        // GET: /Repositorios/Create
+        public ActionResult Create(Guid pId)
         {
-            return View();
+            var repo = new Repositorio
+            {
+                ProyectoId = pId
+            };
+            return View(repo);
         }
 
-        // POST: /Proyecto/Create
+        // POST: /Repositorios/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nombre,Fecha,Activo,Descripcion")] Proyecto proyecto)
+        public ActionResult Create([Bind(Include="Id,Nombre,Url,ProyectoId")] Repositorio repositorio)
         {
             if (ModelState.IsValid)
             {
-                proyecto.Id = Guid.NewGuid();
-                proyecto.Fecha = DateTime.Now;
-                proyecto.Activo = true;
-                db.Proyectoes.Add(proyecto);
+                repositorio.Id = Guid.NewGuid();
+                db.Repositorios.Add(repositorio);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { pId = repositorio.ProyectoId });
             }
 
-            return View(proyecto);
+            return View(repositorio);
         }
 
-        // GET: /Proyecto/Edit/5
+        // GET: /Repositorios/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Proyecto proyecto = db.Proyectoes.Find(id);
-            if (proyecto == null)
+            Repositorio repositorio = db.Repositorios.Find(id);
+            if (repositorio == null)
             {
                 return HttpNotFound();
             }
-            return View(proyecto);
+            return View(repositorio);
         }
 
-        // POST: /Proyecto/Edit/5
+        // POST: /Repositorios/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nombre,Fecha,Activo,Descripcion")] Proyecto proyecto)
+        public ActionResult Edit([Bind(Include="Id,Nombre,Url,ProyectoId")] Repositorio repositorio)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(proyecto).State = EntityState.Modified;
+                db.Entry(repositorio).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { pId = repositorio.ProyectoId });
             }
-            return View(proyecto);
+            return View(repositorio);
         }
 
-        // GET: /Proyecto/Delete/5
+        // GET: /Repositorios/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Proyecto proyecto = db.Proyectoes.Find(id);
-            if (proyecto == null)
+            Repositorio repositorio = db.Repositorios.Find(id);
+            if (repositorio == null)
             {
                 return HttpNotFound();
             }
-            return View(proyecto);
+            return View(repositorio);
         }
 
-        // POST: /Proyecto/Delete/5
+        // POST: /Repositorios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Proyecto proyecto = db.Proyectoes.Find(id);
-            db.Proyectoes.Remove(proyecto);
+            Repositorio repositorio = db.Repositorios.Find(id);
+            db.Repositorios.Remove(repositorio);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { pId = repositorio.ProyectoId });
         }
 
         protected override void Dispose(bool disposing)

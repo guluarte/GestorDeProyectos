@@ -52,3 +52,11 @@ input[type="checkbox"].input-validation-error {
     margin-right: auto;
 }
 .center-block {float: none !important}
+
+textarea {
+     height: 300px;
+}
+
+input[type="text"],input[type="datetime"],textarea {
+     width: 100%;
+}

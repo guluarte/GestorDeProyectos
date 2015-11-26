@@ -124,7 +124,7 @@ namespace ProyectoTerminal.Models
         [Display(Name = "Nombre")]
         public string Nombre { get; set; }
         [Required]
-        [Display(Name = "Direccion Web")]
+        [Display(Name = "Url")]
         public string Url { get; set; }
         [Required]
         public Guid ProyectoId { get; set; }

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ProyectoTerminal.Models.Nota>
+﻿@using ProyectoTerminal.Extensions
+@model IEnumerable<ProyectoTerminal.Models.Nota>
 
 @{
     ViewBag.Title = "Listado de Notas";
@@ -21,7 +22,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Texto)
+                @Html.DisplayFor(modelItem => item.Texto).ToString().TruncateString(0, 100)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
